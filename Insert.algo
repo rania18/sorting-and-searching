@@ -1,0 +1,39 @@
+ALGORITHM insert_sort
+VAR 
+    ARR,tab : ARRAY_OF INTEGER;
+    i, j : INTEGER;
+    PROCEDURE merge_sort(VAR ARRAY_OF INTEGER)
+    VAR
+        i,m,mid,from,to,high,low : INTEGER;
+    BEGIN
+        low :=0;
+        high := arr.length-1 ;
+        m:= 1;
+        WHILE (m <= high - low ) DO
+            FOR i FROM low TO high-1 STEP 2*m  DO
+            
+                from := i;
+                mid := i+m-1;
+                to := min (i+2*m-1, high);
+                merge (arr, form, mid, to);
+            
+            END_FOR
+            m:= 2*m;
+        END_WHILE
+    END
+BEGIN
+FOR i FROM 1 TO ARR.length-1 STEP 1  DO
+    
+    tab := ARR[i-1];
+        FOR j FROM 0 TO tab.length-1 STEP 1  DO
+            merge_sort (tab);
+        END_FOR
+    IF (ARR[i]>Tab[tab.length-1]) THEN
+        tab:=ARR[i];
+    ELSE        
+        tab:=ARR[i];
+        merge_sort(tab);
+    END_IF
+END_FOR
+    write (tab);
+END
